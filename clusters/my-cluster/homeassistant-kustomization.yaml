@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: home-assistant
+  namespace: default
+spec:
+  interval: 1m0s
+  chart:
+    spec:
+      chart: home-assistant
+      sourceRef:
+        kind: GitRepository
+        name: home-assistant
+        namespace: flux-system
+  values:
+    key: value
